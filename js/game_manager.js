@@ -187,7 +187,7 @@ GameManager.prototype.move = function (direction) {
     if (exploded) {
       var exploding = self.grid.getExplodingTiles(self.grid);
       for (j = 0; j < exploding.length; j++) {
-          self.grid.decayTile(exploding[j]);
+          self.grid.removeTile(exploding[j]);
       }
     }
 
