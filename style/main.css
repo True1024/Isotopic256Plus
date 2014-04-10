@@ -251,7 +251,7 @@ hr {
 .tile, .tile .tile-inner {
   width: 107px;
   height: 107px;
-  line-height: 99px; }
+  line-height: 80px; }
 .tile.tile-position-1-1 {
   -webkit-transform: translate(0px, 0px);
   -moz-transform: translate(0px, 0px);
@@ -420,7 +420,6 @@ hr {
     font-size: 30px;
     color: #fafafa;
     color: rgba(255, 255, 255, 0.85);
-    visibility: hidden;
   }
   .tile.tile-2 .tile-inner {
     background: #eee4da;
