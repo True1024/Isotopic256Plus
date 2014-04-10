@@ -103,8 +103,6 @@ Grid.prototype.insertTile = function (tile) {
 };
 
 Grid.prototype.removeTile = function (tile) {
-  var mass = tile.value;
-  mass = mass/2;
   this.cells[tile.x][tile.y] = null;
 };
 
