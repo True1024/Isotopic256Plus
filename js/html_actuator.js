@@ -62,16 +62,17 @@ HTMLActuator.prototype.addTile = function (tile) {
   // We can't use classlist because it somehow glitches when replacing classes
   var classes = ["tile", "tile-" + tile.value, positionClass];
 
-  if (tile.unstable !== 0)
+  if (tile.unstable !== 0 && !isNaN(tile.unstable)) {
     classes.push("tile-unstable");
+  }
 
-  if (tile.explode)
-    classes.push("tile-explode");
+  //if (tile.explode)
+    //classes.push("tile-explode");
 
   //if (tile.isDud)
     //classes.push("tile-isDud");
 
-  if (tile.value > 256) classes.push("tile-super");
+  if (tile.value > 1024) classes.push("tile-super");
 
   this.applyClasses(wrapper, classes);
 
@@ -97,7 +98,11 @@ HTMLActuator.prototype.addTile = function (tile) {
       case 128:
         return mass + "I";
       case 256:
-        return mass + "Fm";
+    	return mass + "Fm";
+	  case 512:
+      	return mass + "Re";
+      case 1024:
+      	return mass + "Ad";
       default:
         return mass + "?";
     }
