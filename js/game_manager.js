@@ -138,7 +138,6 @@ GameManager.prototype.move = function (direction) {
               merged.unstable = merged.value === 8
                              || merged.value === 32
                              || merged.value === 128
-                             || merged.value === 256
                              || merged.value > 512 ? (merged.value <= 512 ? merged.value - (merged.value / 4) : 81) : 0;
 
               // Update the score
