@@ -109,8 +109,10 @@ Grid.prototype.removeTile = function (tile) {
 Grid.prototype.decayTile = function (tile) {
   var mass = tile.value;
   mass/=2;
-  this.cells[tile.x][tile.y] = new Tile(tile.getPosition, mass);
-}
+  var decayed = new Tile(tile.previousPosition, mass);
+  this.cells[tile.x][tile.y] = null;
+  this.cells[tile.x][tile.y] = decayed;
+};
 
 Grid.prototype.withinBounds = function (position) {
   return position.x >= 0 && position.x < this.size &&

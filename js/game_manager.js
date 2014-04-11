@@ -177,19 +177,19 @@ GameManager.prototype.move = function (direction) {
         var unstableTile = unstableTiles[i]
         if (unstableTile.unstable === 1) {
             unstableTile.unstable = "0";
-            unstableTile.explode = true;
-            exploded = true;
+            unstableTile.savePosition();
+			self.grid.decayTile(unstableTile);
         }
         else {
           unstableTile.unstable--;
         }
     }
-    if (exploded) {
+    /*if (exploded) {
       var exploding = self.grid.getExplodingTiles(self.grid);
       for (j = 0; j < exploding.length; j++) {
-          self.grid.removeTile(exploding[j]);
+          self.grid.decayTile(exploding[j]);
       }
-    }
+    }*/
 
     this.addRandomTile();
 
