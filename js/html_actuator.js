@@ -102,7 +102,11 @@ HTMLActuator.prototype.addTile = function (tile) {
 	  case 512:
       	return mass + "Re";
       case 1024:
+      	return mass + "Vb";
+      case 2048:
       	return mass + "Ad";
+      case 4096:
+      	return mass + "Ub";
       default:
         return mass + "?";
     }
