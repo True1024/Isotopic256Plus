@@ -72,7 +72,7 @@ HTMLActuator.prototype.addTile = function (tile) {
   //if (tile.isDud)
     //classes.push("tile-isDud");
 
-  if (tile.value > 4096) classes.push("tile-super");
+  if (tile.value > 8192) classes.push("tile-super");
 
   this.applyClasses(wrapper, classes);
 
@@ -107,6 +107,8 @@ HTMLActuator.prototype.addTile = function (tile) {
       	return mass + "Ad";
       case 4096:
       	return mass + "Ub";
+      case 8192:
+      	return mass + "Og";
       default:
         return mass + "?";
     }
